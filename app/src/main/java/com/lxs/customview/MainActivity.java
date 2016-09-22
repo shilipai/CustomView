@@ -12,8 +12,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mRatioCircleView = (RatioCircleView) findViewById(R.id.ratio_circle_view);
+        mRatioCircleView = new RatioCircleView(this);
+//        setContentView(R.layout.activity_main);
+        setContentView(mRatioCircleView);
+//        mRatioCircleView = (RatioCircleView) findViewById(R.id.ratio_circle_view);
         mRatioCircleDatas = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             mRatioCircleDatas.add(new RatioCircleData(String.valueOf(i), i));
