@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mRatioCircleView = (RatioCircleView) findViewById(R.id.ratio_circle_view);
         mRatioCircleDatas = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             mRatioCircleDatas.add(new RatioCircleData(i + "", i));
         }
         mRatioCircleView.setData(mRatioCircleDatas);
