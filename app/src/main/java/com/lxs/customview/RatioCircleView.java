@@ -57,10 +57,10 @@ public class RatioCircleView extends View {
         RectF rect = new RectF(-r, -r, r, r);                     // 饼状图绘制区域
 
         for (int i = 0; i < mData.size(); i++) {
-            RatioCircleData pie = mData.get(i);
-            mPaint.setColor(pie.getColor());
-            canvas.drawArc(rect, currentStartAngle, pie.getAngle(), true, mPaint);
-            currentStartAngle += pie.getAngle();
+            RatioCircleData ratioCircleData = mData.get(i);
+            mPaint.setColor(ratioCircleData.getColor());
+            canvas.drawArc(rect, currentStartAngle, ratioCircleData.getAngle(), true, mPaint);
+            currentStartAngle += ratioCircleData.getAngle();
         }
 
     }
@@ -85,26 +85,26 @@ public class RatioCircleView extends View {
 
         float sumValue = 0;
         for (int i = 0; i < mData.size(); i++) {
-            RatioCircleData pie = mData.get(i);
+            RatioCircleData ratioCircleData = mData.get(i);
 
-            sumValue += pie.getValue();       //计算数值和
+            sumValue += ratioCircleData.getValue();       //计算数值和
 
             int j = i % mColors.length;       //设置颜色
-            pie.setColor(mColors[j]);
+            ratioCircleData.setColor(mColors[j]);
         }
 
-        float sumAngle = 0;
+//        float sumAngle = 0;
         for (int i = 0; i < mData.size(); i++) {
-            RatioCircleData pie = mData.get(i);
+            RatioCircleData ratioCircleData = mData.get(i);
 
-            float percentage = pie.getValue() / sumValue;   // 百分比
+            float percentage = ratioCircleData.getValue() / sumValue;   // 百分比
             float angle = percentage * 360;                 // 对应的角度
 
-            pie.setPercentage(percentage);                  // 记录百分比
-            pie.setAngle(angle);                            // 记录角度大小
-            sumAngle += angle;
+            ratioCircleData.setPercentage(percentage);                  // 记录百分比
+            ratioCircleData.setAngle(angle);                            // 记录角度大小
+//            sumAngle += angle;
 
-            Log.i("angle", "" + pie.getAngle());
+            Log.i("angle", "" + ratioCircleData.getAngle());
         }
     }
 }
