@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.lxs.customview.MainActivity">
 
-    <com.lxs.customview.RatioCircleView
-        android:id="@+id/ratio_circle_view"
+    <Button
+        android:id="@+id/ratio_circle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:layout_height="wrap_content"
+        android:text="RatioCircle"/>
+
+    <Button
+        android:id="@+id/skew_rectangle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ratio_circle"
+        android:text="SkewRectangle"/>
 </RelativeLayout>
